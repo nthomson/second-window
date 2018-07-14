@@ -8,7 +8,6 @@
 
 .ticket {
   flex: 1;
-  height: 50px;
   background: #ccc;
   margin: 5px;
 }

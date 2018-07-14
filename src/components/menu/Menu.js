@@ -12,12 +12,15 @@ class Menu extends React.Component {
   }
 
   addItemToTicket(id, e) {
-    console.log(MenuService.getMenuItem(id));
+    const item = MenuService.getMenuItem(id);
+    this.props.onSelectItem(item);
   }
 
   render() {
     const menuItems = this.state.items.map((item)=>
-      <div key={item.id} onClick={this.addItemToTicket.bind(this, item.id)}><MenuItem item={item} /></div>
+      <div key={item.id} onClick={this.addItemToTicket.bind(this, item.id)}>
+        <MenuItem item={item} />
+      </div>
     )
     return (
       <div className="Menu">
