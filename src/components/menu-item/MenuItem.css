@@ -1,0 +1,13 @@
+.MenuItem {
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	background: #ccc;
+	margin: 5px;
+	float: left;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
