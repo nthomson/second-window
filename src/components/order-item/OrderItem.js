@@ -12,7 +12,7 @@ class OrderItem extends React.Component {
     return (
       <div className="OrderItem">
         <MenuItem item={this.props.menuItem} />
-        <div class="total-cost">
+        <div className="total-cost">
           x{this.props.count} - ${this.getTotalCost()}
         </div>
       </div>

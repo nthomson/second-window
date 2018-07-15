@@ -19,7 +19,7 @@ class Menu extends React.Component {
   render() {
     const menuItems = this.state.items.map((item)=>
       <div key={item.id} onClick={this.addItemToTicket.bind(this, item.id)}>
-        <MenuItem item={item} />
+        <MenuItem item={item} showPrice={true} />
       </div>
     )
     return (

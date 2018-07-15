@@ -1,13 +1,24 @@
-.App {
+.App .ticket-build {
   display: flex;
 }
 
-.menu-pos {
+.App .menu-pos {
   flex: 2;
 }
 
-.ticket {
+.App .ticket {
   flex: 1;
-  background: #ccc;
+  margin: 5px;
+}
+
+.App .ticket .commands {
+  display: flex;
+}
+
+.App .ticket .commands button {
+  cursor: pointer;
+  flex: 1;
+  line-height: 50px;
+  border: 1px #333 solid;
   margin: 5px;
 }
