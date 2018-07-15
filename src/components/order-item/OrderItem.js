@@ -9,11 +9,12 @@ class OrderItem extends React.Component {
   }
 
   render() {
+    const totalPrice = this.props.showPrice ? (<span>- ${this.getTotalCost()}</span>) : null;
     return (
       <div className="OrderItem">
         <MenuItem item={this.props.menuItem} />
-        <div className="total-cost">
-          x{this.props.count} - ${this.getTotalCost()}
+        <div className="count">
+          <div>x{this.props.count} {totalPrice}</div>
         </div>
       </div>
     );

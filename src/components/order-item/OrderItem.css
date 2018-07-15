@@ -5,7 +5,7 @@
   display: flex;
 }
 
-.OrderItem .total-cost {
+.OrderItem .count {
 	text-align: right;
 	flex: 1;
 	display: flex;

@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.App .menu-pos {
+.App .pos-menu {
   flex: 2;
 }
 
@@ -21,4 +21,11 @@
   line-height: 50px;
   border: 1px #333 solid;
   margin: 5px;
+}
+
+
+.order-queue {
+  margin: 30px;
+  background: #ccc;
+  padding: 5px;
 }

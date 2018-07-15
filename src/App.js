@@ -33,6 +33,24 @@ class App extends Component {
     });
   }
 
+  removeItemFromTicket(item) {
+    this.setState(function(prevState){
+      const ticketItems = prevState.ticketItems;
+
+      if(ticketItems[item.id]) {
+        ticketItems[item.id].count -= 1;
+
+        if(ticketItems[item.id].count < 1) {
+          delete ticketItems[item.id];
+        }
+      }
+
+      return {
+        ticketItems: ticketItems
+      };
+    });
+  }
+
   sendTicket() {
     this.setState(function(prevState){
       return {
@@ -47,25 +65,45 @@ class App extends Component {
     this.setState({ticketItems: {}, itemNum: 0});
   }
 
+  clearItemFromQueue(order) {
+    console.log('clear item from queue', order);
+    this.setState(function(prevState){
+      let orders = [...prevState.orders];
+
+      var orderIndex = orders.indexOf(order);
+      if(orderIndex > -1) {
+        orders.splice(orderIndex, 1);
+      }
+
+      return {
+        orders: orders,
+      }
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <div className="ticket-build">
-          <div className="menu-pos">
-            <Menu onSelectItem={this.addItemToTicket.bind(this)} />
-          </div>
+
           <div className="ticket">
-            <Order items={this.state.ticketItems} showPrice={true} />
+            <Order
+              items={this.state.ticketItems}
+              showPrice={true}
+              onRemoveItem={this.removeItemFromTicket.bind(this)}
+            />
             <div className="commands">
               <button onClick={this.cancelTicket.bind(this)} className="cancel">Cancel</button>
               <button onClick={this.sendTicket.bind(this)} className="send">Send</button>
             </div>
           </div>
+          <div className="pos-menu">
+            <Menu onSelectItem={this.addItemToTicket.bind(this)} />
+          </div>
         </div>
 
-        <h4>Order Queue</h4>
         <div className="order-queue">
-          <OrderQueue orders={this.state.orders} />
+          <OrderQueue orders={this.state.orders} onRemoveItem={this.clearItemFromQueue.bind(this)} />
         </div>
       </div>
     );
