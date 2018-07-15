@@ -8,10 +8,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {ticketItems: {}};
+
+    this.itemNum = 0;
   }
 
   addItemToTicket(item) {
-    console.log(item);
     this.setState(function(prevState){
       const ticketItems = prevState.ticketItems;
 
@@ -21,7 +22,8 @@ class App extends Component {
       else {
         ticketItems[item.id] = {
           item: item,
-          count: 1
+          count: 1,
+          itemNum: this.itemNum++
         }
       }
 

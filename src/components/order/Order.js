@@ -1,19 +1,23 @@
 import React from 'react';
 import './Order.css';
-import MenuItem from '../menu-item/MenuItem';
+import OrderItem from '../order-item/OrderItem';
 
 class Order extends React.Component {
+
   render() {
-  	const orderItems = Object.values(this.props.items).map((orderItem)=>
-      <div key={orderItem.item.id}>
-        <MenuItem item={orderItem.item} />
-        <p>Count: {orderItem.count}</p>
-      </div>
-    )
+    const sortedItems = Object.values(this.props.items)
+      .sort((a, b) => a.itemNum - b.itemNum)
+
+    const orderItems = sortedItems.map(orderItem =>
+        <OrderItem key={orderItem.item.id} menuItem={orderItem.item} count={orderItem.count} />
+      )
+
+    const totalCost = sortedItems.reduce((acc, curr) => acc + (curr.count * curr.item.price), 0) / 100;
 
     return (
       <div className="Order">
-      	{orderItems}
+        {orderItems}
+        <div class="total">Total: ${totalCost}</div>
       </div>
     );
   }

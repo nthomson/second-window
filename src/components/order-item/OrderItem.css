@@ -1,0 +1,14 @@
+.OrderItem {
+  border-bottom: 1px #333 solid;
+  padding: 5px;
+
+  display: flex;
+}
+
+.OrderItem .total-cost {
+	text-align: right;
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+}
