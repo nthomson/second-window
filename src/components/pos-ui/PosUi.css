@@ -1,0 +1,24 @@
+.PosUi {
+  display: flex;
+}
+
+.PosUi .pos-menu {
+  flex: 2;
+}
+
+.PosUi .ticket {
+  flex: 1;
+  margin: 5px;
+}
+
+.PosUi .ticket .commands {
+  display: flex;
+}
+
+.PosUi .ticket .commands button {
+  cursor: pointer;
+  flex: 1;
+  line-height: 50px;
+  border: 1px #333 solid;
+  margin: 5px;
+}

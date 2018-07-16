@@ -1,5 +1,5 @@
 import React from 'react';
-// import './PosUi.css';
+import './PosUi.css';
 
 import Menu from '../menu/Menu';
 import Order from '../order/Order';
