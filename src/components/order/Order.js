@@ -9,9 +9,8 @@ class Order extends React.Component {
       .sort((a, b) => a.itemNum - b.itemNum)
 
     const orderItems = sortedItems.map(orderItem => (
-        <div className="order-line">
+        <div className="order-line" key={orderItem.item.id}>
           <OrderItem
-            key={orderItem.item.id}
             showPrice={this.props.showPrice}
             menuItem={orderItem.item}
             count={orderItem.count}

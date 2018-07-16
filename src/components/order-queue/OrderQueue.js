@@ -8,13 +8,14 @@ class OrderQueue extends React.Component {
 
   render() {
     const orders = this.props.orders.map(order => (
-      <div>
+      <div className="queue-item" key={order.id}>
+        <Order items={order.items} />
         {this.props.onRemoveItem ? (
-          <button onClick={this.props.onRemoveItem.bind(this, order)}>
-            complete
+          <button className="complete"
+            onClick={this.props.onRemoveItem.bind(this, order)}>
+            Complete
           </button>
         ) : null}
-        <Order items={order} />
       </div>
     ))
 

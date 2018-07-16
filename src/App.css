@@ -2,6 +2,7 @@
 	display: flex;
 	border-bottom: 4px #ccc solid;
 	margin-bottom: 15px;
+	background: white;
 }
 
 .tabNav button {
@@ -9,7 +10,7 @@
 	outline: 0;
 	width: 200px;
 	line-height: 50px;
-	background: white;
+	background: transparent;
 	font-size: 20px;
 	margin-bottom: -4px;
 	border: 0;

@@ -8,13 +8,21 @@ import OrderQueue from './components/order-queue/OrderQueue';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {orders: [], tab: 'pos'};
+    this.state = {orders: [], tab: 'pos', orderNum: 1};
   }
 
   sendTicket(ticketItems) {
-    this.setState(prevState => ({
-      orders: [...prevState.orders, ticketItems]
-    }));
+    this.setState(function(prevState){
+      const newOrder = {
+        items: ticketItems,
+        id: prevState.orderNum
+      };
+
+      return {
+        orders: [...prevState.orders, newOrder],
+        orderNum: prevState.orderNum + 1
+      }
+    });
   }
 
   clearItemFromQueue(order) {

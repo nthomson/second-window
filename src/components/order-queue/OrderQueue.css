@@ -2,3 +2,37 @@
   margin: 5px;
   padding: 5px;
 }
+
+.OrderQueue .queue-item {
+  width: 300px;
+  margin: 5px;
+  margin-right: 15px;
+
+  background: white;
+  border: 1px #ccc solid;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.OrderQueue .OrderItem {
+  width: 100%;
+  margin: 5px;
+}
+
+.OrderQueue .queue-item .MenuItem {
+  float: left;
+}
+
+.OrderQueue .queue-item .count {
+  float: right;
+}
+
+.OrderQueue .queue-item button.complete {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #17a2b8;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+}
