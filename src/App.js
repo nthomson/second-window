@@ -8,7 +8,7 @@ import OrderQueue from './components/order-queue/OrderQueue';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {orders: []};
+    this.state = {orders: [], tab: 'pos'};
   }
 
   sendTicket(ticketItems) {
@@ -32,11 +32,40 @@ class App extends Component {
     });
   }
 
+  setTab(tabName) {
+    this.setState({tab: tabName});
+  }
+
   render() {
     return (
       <div className="App">
-        <PosUi onSendTicket={this.sendTicket.bind(this)} />
-        <OrderQueue orders={this.state.orders} onRemoveItem={this.clearItemFromQueue.bind(this)} />
+        <div className="tabNav">
+          <button
+            className={this.state.tab === 'pos' ? 'active' : ''}
+            onClick={this.setTab.bind(this, 'pos')}
+          >
+            Menu
+          </button>
+          <button
+            className={this.state.tab === 'queue' ? 'active' : ''}
+            onClick={this.setTab.bind(this, 'queue')}
+          >
+            Order Queue
+            ({this.state.orders.length})
+          </button>
+        </div>
+        <div className={this.state.tab !== 'pos' ? 'hidden' : ''}>
+          <PosUi
+            onSendTicket={this.sendTicket.bind(this)}
+
+          />
+        </div>
+        <div className={this.state.tab !== 'queue' ? 'hidden' : ''}>
+          <OrderQueue
+            orders={this.state.orders}
+            onRemoveItem={this.clearItemFromQueue.bind(this)}
+          />
+        </div>
       </div>
     );
   }

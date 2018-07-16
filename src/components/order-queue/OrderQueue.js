@@ -11,7 +11,7 @@ class OrderQueue extends React.Component {
       <div>
         {this.props.onRemoveItem ? (
           <button onClick={this.props.onRemoveItem.bind(this, order)}>
-            x
+            complete
           </button>
         ) : null}
         <Order items={order} />

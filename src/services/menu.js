@@ -13,7 +13,13 @@ const menu = [
   {name: 'Milk Shake', price: 299, id: 12},
   {name: 'Fountain Drink', price: 149, id: 13},
   {name: 'Pretzel Bites', price: 199, id: 14},
-  {name: 'Corn Dog', price: 149, id: 15}
+  {name: 'Corn Dog', price: 149, id: 15},
+  {name: 'Chicken Pita', price: 199, id: 16},
+  {name: 'Iced Tea', price: 199, id: 17},
+  {name: 'Ham Sandwich', price: 299, id: 18},
+  {name: 'Ice Cream Cone', price: 299, id: 19},
+  {name: 'Tater Tots', price: 199, id: 21},
+  {name: 'Chicken Biscuit', price: 149, id: 22}
 ];
 
 const menuItemById = {};

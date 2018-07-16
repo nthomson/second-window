@@ -1,0 +1,21 @@
+.tabNav {
+	display: flex;
+	border-bottom: 4px #ccc solid;
+	margin-bottom: 15px;
+}
+
+.tabNav button {
+	cursor: pointer;
+	outline: 0;
+	width: 200px;
+	line-height: 50px;
+	background: white;
+	font-size: 20px;
+	margin-bottom: -4px;
+	border: 0;
+	border-bottom: 4px #ccc solid;
+}
+
+.tabNav button.active {
+	border-bottom: 4px #17a2b8 solid;
+}

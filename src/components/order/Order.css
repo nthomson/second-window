@@ -1,13 +1,23 @@
 .Order {
-	border-bottom: 1px #333 solid;
+  border-bottom: 1px #333 solid;
 }
 
 .Order .total {
-	text-align: right;
-	font-size: 22px;
-	padding: 5px;
+  text-align: right;
+  font-size: 22px;
+  padding: 5px;
 }
 
 .Order .order-line {
-	display: flex;
+  display: flex;
+}
+
+.Order .order-line button {
+  font-size: 26px;
+  background: #dc3545;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 1px 10px;
 }
