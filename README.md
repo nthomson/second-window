@@ -11,7 +11,7 @@ npm start
 - There's a reason I'm not a designer.
 - I wanted to build the project purely with what came with `create-react-app my-app`, which turns out is not much. If I were to do this again I would probably add a CSS preprocessor and a few helpers libraries.
 - While researching React I found that a lot of apps are built with Redux. I decided to keep it simple for this and not use Redux.
-- I found it difficult to decide when to break something into a separate component, I think I've found a happy middle-ground here but I can see how it's easy to go too far in one direction.
+- I found it difficult to decide when to break something into a separate component, I think I've found a happy middle-ground here but I can see how it's easy to go too far in one direction. Looking at this with a fresh eye may change my mind, however.
 - I *think* like the solution I've used for overriding a component's CSS for use in a different parent component.
 	- I simply include the necessary overrides in the parent's CSS.
 	- I decided to *not* include these CSS overrides in the child component, as the child component shouldn't know about the context its in.
@@ -22,4 +22,5 @@ npm start
 - Add messages for empty UI elements (An empty ticket, or when there are no orders in the queue)
 - Add a search function to the POS UI to search for menu items
 - Add categories to menu items, to enable filtering based on category
+- Make a few things a little more consistent. Near the end of the project I was discovering better ways to do things. If I had more time I would re-factor a few places.
 
